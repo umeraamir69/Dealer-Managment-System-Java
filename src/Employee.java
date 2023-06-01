@@ -22,6 +22,10 @@ public class Employee extends User {
         this.position = position;
     }
 
+    public void setUsername(String position) {
+        this.username = username;
+    }
+
     public String getPosition() {
         return position;
     }

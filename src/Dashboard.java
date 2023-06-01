@@ -208,6 +208,53 @@ public class Dashboard extends JFrame {
                 });
             }
 
+            else if (menuItem.equals("Edit Employee")) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new EmployeeTableGUI(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }
+
+            else if (menuItem.equals("Find Employee")) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new EmployeeTableGUI(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }
+
+            else if (menuItem.equals("Delete Employee")) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new EmployeeTableDel(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }
+
+            else if (menuItem.equals("Block Employee")) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        JPanel pnl = new JPanel();
+                        pnl.add(new BlockEmployeePanel(data), BorderLayout.WEST);
+                        pnl.add(new EmployeeTableGUI(data), BorderLayout.SOUTH);
+                        contentPane.add(pnl, BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }
+
             popupMenu.add(item);
         }
         button.addActionListener(new ActionListener() {

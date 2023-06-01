@@ -9,8 +9,8 @@ public class CarDealerManagementSystem {
     public ArrayList<Sale> sales;
     public ArrayList<Receipt> receipts;
     public Finance finance;
+    public Employee currentobj;
 
-    public String login;
     public CarDealerManagementSystem() {
         cars = new ArrayList<>();
         customers = new ArrayList<>();
@@ -56,13 +56,17 @@ public class CarDealerManagementSystem {
         finance.recordTransaction(amount, isCashInHand);
     }
 
+    public void logout (){
+         this.employees = null;
+    }
+
     // Other methods for managing the system
 
     public Finance getFinance() {
         return finance;
     }
-    public void setLogin(String name) {
-        this.login = name;
+    public void setLogin(Employee emp) {
+        this.currentobj = emp;
     }
 
     // ...

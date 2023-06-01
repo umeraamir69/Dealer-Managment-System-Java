@@ -9,7 +9,7 @@ public class Dashboard extends JFrame {
     private CarDealerManagementSystem data;
 
     public Dashboard(CarDealerManagementSystem data) {
-        this.data =data;
+        this.data = data;
         initComponents();
     }
 
@@ -35,15 +35,16 @@ public class Dashboard extends JFrame {
         setContentPane(contentPane);
     }
 
-    private JPanel loginlbl () {
-        JLabel loginLabel = new JLabel("Login as " + data.login);
+    private JPanel loginlbl() {
+        JLabel loginLabel = new JLabel("Login as " + data.currentobj.getName());
         loginLabel.setForeground(Color.WHITE);
         loginLabel.setFont(new Font("Arial", Font.BOLD, 14));
         JPanel loginPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         loginPanel.setBackground(Color.decode("#27374D"));
         loginPanel.add(loginLabel);
-        return  loginPanel;
+        return loginPanel;
     }
+
     private JPanel createTopNavigationBar() {
         JPanel topNavBar = new JPanel(new BorderLayout());
         topNavBar.setBackground(Color.decode("#27374D"));
@@ -145,7 +146,11 @@ public class Dashboard extends JFrame {
         logoutButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Perform logout action
-                dispose();  // Close the dashboard window
+                // Close the dashboard window
+             setVisible(false);
+               LoginForm lgfmr = new LoginForm(data);
+               lgfmr.setVisible(true);
+
                 // Add your logout code here
             }
         });
@@ -170,24 +175,22 @@ public class Dashboard extends JFrame {
             if (menuItem.equals("Add Car")) {
                 item.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                      ResetPane();
+                        ResetPane();
                         contentPane.add(new CarForm(data), BorderLayout.CENTER);
                         contentPane.revalidate();
                         contentPane.repaint();
                     }
                 });
-            }
-            else if (menuItem.equals("View Car")) {
+            } else if (menuItem.equals("View Car")) {
                 item.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                       ResetPane();
+                        ResetPane();
                         contentPane.add(new ViewCarPanel(data), BorderLayout.CENTER);
                         contentPane.revalidate();
                         contentPane.repaint();
                     }
                 });
-            }
-            else if (menuItem.equals("Edit & Delete Car")) {
+            } else if (menuItem.equals("Edit & Delete Car")) {
                 item.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         ResetPane();
@@ -196,8 +199,7 @@ public class Dashboard extends JFrame {
                         contentPane.repaint();
                     }
                 });
-            }
-            else if (menuItem.equals("Add Employee")) {
+            } else if (menuItem.equals("Add Employee")) {
                 item.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         ResetPane();
@@ -206,9 +208,7 @@ public class Dashboard extends JFrame {
                         contentPane.repaint();
                     }
                 });
-            }
-
-            else if (menuItem.equals("Edit Employee")) {
+            } else if (menuItem.equals("Edit Employee")) {
                 item.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         ResetPane();
@@ -217,9 +217,7 @@ public class Dashboard extends JFrame {
                         contentPane.repaint();
                     }
                 });
-            }
-
-            else if (menuItem.equals("Find Employee")) {
+            } else if (menuItem.equals("Find Employee")) {
                 item.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         ResetPane();
@@ -228,9 +226,7 @@ public class Dashboard extends JFrame {
                         contentPane.repaint();
                     }
                 });
-            }
-
-            else if (menuItem.equals("Delete Employee")) {
+            } else if (menuItem.equals("Delete Employee")) {
                 item.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         ResetPane();
@@ -239,16 +235,15 @@ public class Dashboard extends JFrame {
                         contentPane.repaint();
                     }
                 });
-            }
-
-            else if (menuItem.equals("Block Employee")) {
+            } else if (menuItem.equals("Block Employee")) {
                 item.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         ResetPane();
-                        JPanel pnl = new JPanel();
-                        pnl.add(new BlockEmployeePanel(data), BorderLayout.WEST);
-                        pnl.add(new EmployeeTableGUI(data), BorderLayout.SOUTH);
-                        contentPane.add(pnl, BorderLayout.CENTER);
+//                        JPanel pnl = new JPanel();
+//                        pnl.add(new BlockEmployeePanel(data), BorderLayout.WEST);
+//                        pnl.add(new EmployeeTableGUI(data), BorderLayout.SOUTH);
+
+                        contentPane.add(new BlockEmployeePanel(data), BorderLayout.CENTER);
                         contentPane.revalidate();
                         contentPane.repaint();
                     }
@@ -268,7 +263,7 @@ public class Dashboard extends JFrame {
     }
 
 
-    public void ResetPane(){
+    public void ResetPane() {
         contentPane.removeAll();
 
 
@@ -283,6 +278,3 @@ public class Dashboard extends JFrame {
     }
 
 }
-
-
-

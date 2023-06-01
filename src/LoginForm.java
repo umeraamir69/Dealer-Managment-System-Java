@@ -90,9 +90,13 @@ public class LoginForm extends JFrame {
     private boolean checkLoginCredentials(String username, String password) {
         // Check the username and password with the stored credentials in the employee list
         for (Employee employee : data.employees) {
-            if (employee.getUsername().equals(username) && employee.getPassword().equals(password)) {
-                data.login = employee.getName();
+            if (employee.getUsername().equals(username) && employee.getPassword().equals(password) && employee.isActive()) {
+                data.currentobj = employee;
                 return true;  // Match found, login successful
+            }
+            else if(!employee.isActive()){
+                JOptionPane.showMessageDialog(LoginForm.this, "User Are Blocked! Contact ADMINISTRATOR", "Login Failed", JOptionPane.ERROR_MESSAGE);
+
             }
         }
         return false;  // No match found, login failed

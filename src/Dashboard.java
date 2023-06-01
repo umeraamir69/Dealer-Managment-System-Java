@@ -187,6 +187,16 @@ public class Dashboard extends JFrame {
                     }
                 });
             }
+            else if (menuItem.equals("Edit & Delete Car")) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new CarRecordGUI(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }
 
             popupMenu.add(item);
         }

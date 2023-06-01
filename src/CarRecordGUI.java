@@ -7,17 +7,24 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class CarRecordGUI extends JPanel {
-    private List<Car> carRecords;
+    private ArrayList<Car> carRecords;
     private DefaultTableModel tableModel;
     private JTable table;
     private JTextField searchField;
-    private  CarDealerManagementSystem data;
+    private JComboBox<String> sortComboBox;
+    private CarDealerManagementSystem data;
 
     public CarRecordGUI(CarDealerManagementSystem data) {
         this.carRecords = data.cars;
+        this.data = data;
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        buttonPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 
         // Create table model and table
         tableModel = new DefaultTableModel();
@@ -33,13 +40,44 @@ public class CarRecordGUI extends JPanel {
         tableModel.addColumn("Registration Number");
         table = new JTable(tableModel);
 
+        populateTable(carRecords);
         // Create search panel
         JPanel searchPanel = new JPanel(new BorderLayout());
         searchPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         JLabel searchLabel = new JLabel("Search:");
         searchField = new JTextField();
+        searchField.getDocument().addDocumentListener(new DocumentListener() {
+            public void insertUpdate(DocumentEvent e) {
+                searchCarRecords();
+            }
+
+            public void removeUpdate(DocumentEvent e) {
+                searchCarRecords();
+            }
+
+            public void changedUpdate(DocumentEvent e) {
+                searchCarRecords();
+            }
+        });
+
+        // Create sort combo box
+        sortComboBox = new JComboBox<>();
+        sortComboBox.addItem("All");
+        sortComboBox.addItem("Available");
+        sortComboBox.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                searchCarRecords();
+            }
+        });
+
+        // Create search panel components
+        JPanel searchComponentPanel = new JPanel(new BorderLayout());
+        searchComponentPanel.add(searchField, BorderLayout.CENTER);
+        searchComponentPanel.add(sortComboBox, BorderLayout.EAST);
+
+        // Add components to the search panel
         searchPanel.add(searchLabel, BorderLayout.WEST);
-        searchPanel.add(searchField, BorderLayout.CENTER);
+        searchPanel.add(searchComponentPanel, BorderLayout.CENTER);
 
         // Create main panel
         JPanel mainPanel = new JPanel(new BorderLayout());
@@ -63,7 +101,26 @@ public class CarRecordGUI extends JPanel {
                 }
             }
         });
-        mainPanel.add(editButton, BorderLayout.SOUTH);
+        buttonPanel.add(editButton);
+
+        JButton deleteButton = new JButton("Delete");
+        deleteButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int selectedRow = table.getSelectedRow();
+                if (selectedRow != -1) {
+                    String carID = table.getValueAt(selectedRow, 0).toString();
+                    Car selectedCar = getCarByID(carID);
+                    if (selectedCar != null) {
+                        carRecords.remove(selectedCar);
+                        populateTable(carRecords);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(CarRecordGUI.this, "Please select a car to delete.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+        buttonPanel.add(deleteButton);
+        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
 
         // Add main panel to the current panel
         setLayout(new BorderLayout());
@@ -85,15 +142,30 @@ public class CarRecordGUI extends JPanel {
 
     private void searchCarRecords() {
         String searchText = searchField.getText().toLowerCase();
+        String sortOption = sortComboBox.getSelectedItem().toString();
+
         List<Car> searchResults = new ArrayList<>();
         for (Car car : carRecords) {
-            if (car.getMake().toLowerCase().contains(searchText) ||
+            boolean matchesSearchText = car.getMake().toLowerCase().contains(searchText) ||
                     car.getModel().toLowerCase().contains(searchText) ||
                     car.getVariant().toLowerCase().contains(searchText) ||
-                    car.getRegistrationNumber().toLowerCase().contains(searchText)) {
+                    car.getRegistrationNumber().toLowerCase().contains(searchText);
+
+            boolean matchesSortOption;
+            if (sortOption.equals("Available")) {
+                matchesSortOption = car.getStatus();
+            } else {
+                matchesSortOption = true; // Show all cars
+            }
+
+            if (matchesSearchText && matchesSortOption) {
                 searchResults.add(car);
             }
         }
+
+        // Sort search results based on car ID
+        searchResults.sort(Comparator.comparing(Car::getCarID));
+
         populateTable(searchResults);
     }
 
@@ -179,5 +251,21 @@ public class CarRecordGUI extends JPanel {
         editFormDialog.pack();
         editFormDialog.setLocationRelativeTo(this);
         editFormDialog.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                CarDealerManagementSystem data = new CarDealerManagementSystem();
+                CarRecordGUI carRecordGUI = new CarRecordGUI(data);
+
+                JFrame frame = new JFrame("Car Records");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.add(carRecordGUI);
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+            }
+        });
     }
 }

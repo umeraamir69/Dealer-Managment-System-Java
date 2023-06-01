@@ -17,6 +17,7 @@ public class ViewCarPanel extends JPanel {
     private JLabel regNumberLabel;
     private JLabel carIdLabel;
     private JLabel ratingsLabel;
+    private JLabel priceLabel;
 
     private ArrayList<Car> carList; // Assuming you have an ArrayList of Car objects
 
@@ -38,6 +39,7 @@ public class ViewCarPanel extends JPanel {
         regNumberLabel = createLabel("Registration Number:");
         carIdLabel = createLabel("Car ID:");
         ratingsLabel = createLabel("Ratings:");
+        priceLabel = createLabel("Price:");
 
         JPanel searchPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         searchPanel.setBackground(Color.decode("#27374D"));
@@ -59,7 +61,7 @@ public class ViewCarPanel extends JPanel {
         searchPanel.add(searchField);
         searchPanel.add(searchButton);
 
-        JPanel detailsPanel = new JPanel(new GridLayout(8, 2, 10, 10));
+        JPanel detailsPanel = new JPanel(new GridLayout(9, 2, 10, 10));
         detailsPanel.setBackground(Color.decode("#27374D"));
         detailsPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
@@ -78,6 +80,8 @@ public class ViewCarPanel extends JPanel {
         detailsPanel.add(carIdLabel);
         detailsPanel.add(new JLabel());
         detailsPanel.add(ratingsLabel);
+        detailsPanel.add(new JLabel());
+        detailsPanel.add(priceLabel);
         detailsPanel.add(new JLabel());
 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
@@ -99,7 +103,7 @@ public class ViewCarPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 Car selectedCar = findCar(searchField.getText());
                 if (selectedCar != null) {
-                    removeCar(selectedCar);
+                   data.cars.remove(selectedCar);
                     clearCarDetails();
                 }
             }
@@ -127,6 +131,7 @@ public class ViewCarPanel extends JPanel {
         regNumberLabel.setText("Registration Number: " + car.getRegistrationNumber());
         carIdLabel.setText("Car ID: " + car.getCarID());
         ratingsLabel.setText("Ratings: " + car.getRating());
+        priceLabel.setText("Price: " + car.getPrice());
 
         ImageIcon imageIcon = getImageIcon(car.getImage());
         if (imageIcon != null) {
@@ -155,6 +160,7 @@ public class ViewCarPanel extends JPanel {
         regNumberLabel.setText("Registration Number: ");
         carIdLabel.setText("Car ID: ");
         ratingsLabel.setText("Ratings: ");
+        priceLabel.setText("Price: ");
     }
 
     private Car findCar(String searchValue) {
@@ -165,7 +171,13 @@ public class ViewCarPanel extends JPanel {
         }
         return null;
     }
-
+    private JTextField createTextField(String text) {
+        JTextField textField = new JTextField(text);
+        textField.setForeground(Color.decode("#DDE6ED"));
+        textField.setBackground(Color.decode("#526D82"));
+        textField.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        return textField;
+    }
     private void openEditPopup(Car car) {
         JDialog editDialog = new JDialog();
         editDialog.setTitle("Edit Car Details");
@@ -173,8 +185,9 @@ public class ViewCarPanel extends JPanel {
         editDialog.setLocationRelativeTo(null);
         editDialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
         editDialog.setLayout(new BorderLayout());
+        editDialog.setBackground(Color.decode("#27374D"));
 
-        JPanel contentPanel = new JPanel(new GridLayout(8, 2, 10, 10));
+        JPanel contentPanel = new JPanel(new GridLayout(9, 2, 10, 10));
         contentPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         JTextField makeField = createTextField(car.getMake());
@@ -185,6 +198,7 @@ public class ViewCarPanel extends JPanel {
         JTextField regNumberField = createTextField(car.getRegistrationNumber());
         JTextField carIdField = createTextField(car.getCarID());
         JTextField ratingsField = createTextField(String.valueOf(car.getRating()));
+        JTextField priceField = createTextField(String.valueOf(car.getPrice()));
 
         contentPanel.add(createLabel("Make:"));
         contentPanel.add(makeField);
@@ -202,6 +216,10 @@ public class ViewCarPanel extends JPanel {
         contentPanel.add(carIdField);
         contentPanel.add(createLabel("Ratings:"));
         contentPanel.add(ratingsField);
+        contentPanel.add(createLabel("Price:"));
+        contentPanel.add(priceField);
+
+        contentPanel.setBackground(Color.decode("#27374D"));
 
         JButton saveButton = new JButton("Save");
         saveButton.addActionListener(new ActionListener() {
@@ -214,6 +232,7 @@ public class ViewCarPanel extends JPanel {
                 car.setColour(colourField.getText());
                 car.setRegistrationNumber(regNumberField.getText());
                 car.setRating(Double.parseDouble(ratingsField.getText()));
+                car.setPrice(Double.parseDouble(priceField.getText()));
 
                 // Display the updated car details
                 displayCarDetails(car);
@@ -226,27 +245,5 @@ public class ViewCarPanel extends JPanel {
         editDialog.add(contentPanel, BorderLayout.CENTER);
         editDialog.add(saveButton, BorderLayout.SOUTH);
         editDialog.setVisible(true);
-    }
-
-    private JTextField createTextField(String text) {
-        JTextField textField = new JTextField(text);
-        textField.setForeground(Color.decode("#DDE6ED"));
-        textField.setBackground(Color.decode("#526D82"));
-        textField.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        return textField;
-    }
-
-    private void removeCar(Car car) {
-        carList.remove(car);
-    }
-
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Car Details");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 400);
-        CarDealerManagementSystem data = new CarDealerManagementSystem();
-        ViewCarPanel viewCarPanel = new ViewCarPanel(data);
-        frame.add(viewCarPanel);
-        frame.setVisible(true);
     }
 }

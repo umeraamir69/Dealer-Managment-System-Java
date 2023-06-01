@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2816564a-1086-4967-a279-8be68c79cb6c" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/src/AddEmployeeGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarRecordGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarRecordGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewCarPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewCarPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employee.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +56,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.CarDealerManagementSystem">
+    <configuration name="AddEmployeeGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AddEmployeeGUI" />
+      <module name="Delaer Managmnet System" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CarDealerManagementSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CarDealerManagementSystem" />
       <module name="Delaer Managmnet System" />
@@ -77,13 +84,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Dashboard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Dashboard" />
-      <module name="Delaer Managmnet System" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ViewCarPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ViewCarPanel" />
       <module name="Delaer Managmnet System" />
@@ -94,10 +94,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.CarDealerManagementSystem" />
+        <item itemvalue="Application.AddEmployeeGUI" />
         <item itemvalue="Application.ViewCarPanel" />
         <item itemvalue="Application.CarRecordGUI" />
         <item itemvalue="Application.CarForm" />
-        <item itemvalue="Application.Dashboard" />
       </list>
     </recent_temporary>
   </component>
@@ -111,7 +111,7 @@
       <updated>1685556052029</updated>
       <workItem from="1685556053290" duration="15318000" />
       <workItem from="1685602454475" duration="1891000" />
-      <workItem from="1685605168090" duration="6053000" />
+      <workItem from="1685605168090" duration="9329000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1685606974205</created>
@@ -120,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685606974205</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first commit">
+      <created>1685613730889</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685613730889</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

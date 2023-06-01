@@ -43,7 +43,7 @@ public class Employee extends User {
     }
 
     public String getUsername() {
-        return username;
+        return this.username;
     }
 
     public String getPassword() {
@@ -90,13 +90,13 @@ public class Employee extends User {
         salary += increaseAmount;
     }
 
-    public String getEmployeeDetails() {
-        return "Employee ID: " + employeeID + "\n" +
+    public void getEmployeeDetails() {
+        System.out.println( "Employee ID: " + employeeID + "\n" +
                 "Name: " + getName() + "\n" +
                 "Position: " + position + "\n" +
                 "Salary: " + salary + "\n" +
                 "Address: " + address + "\n" +
-                "Active: " + active;
+                "Active: " + active);
     }
 
     public Employee(String employeeID, String name, String position, double salary, String address, String user , String pass){

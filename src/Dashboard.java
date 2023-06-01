@@ -197,6 +197,16 @@ public class Dashboard extends JFrame {
                     }
                 });
             }
+            else if (menuItem.equals("Add Employee")) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new AddEmployeeGUI(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }
 
             popupMenu.add(item);
         }

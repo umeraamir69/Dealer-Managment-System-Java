@@ -5,13 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2816564a-1086-4967-a279-8be68c79cb6c" name="Changes" comment="Employee Completed">
-      <change afterPath="$PROJECT_DIR$/src/EmployeeBlockTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cca9e697-e4f8-4286-885b-90a405630f5d.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cca9e697-e4f8-4286-885b-90a405630f5d/storage_v2/_src_/database/DMS.6ggBAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cca9e697-e4f8-4286-885b-90a405630f5d/storage_v2/_src_/database/DMS.6ggBAA/schema/INFORMATION_SCHEMA.NBgcMw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cca9e697-e4f8-4286-885b-90a405630f5d/storage_v2/_src_/database/DMS.6ggBAA/schema/sys.zb4BAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/enu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AddBalancePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BlockCustomerPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CreateCustomerForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CustomerBlockTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CustomerTableGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EmployeeSalaryPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FinancePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FindSalary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InspectionForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InspectionTablePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SalePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SalesDetailsPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SalesPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ViewInspectionPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlockEmployeePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlockEmployeePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Delaer Managmnet System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Delaer Managmnet System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CarDealerManagementSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarDealerManagementSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inspection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inspection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Receipt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sale.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +53,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="8879a245-fb8a-41ee-b1b9-55225d0d33f1" />
+        <option name="url" value="https://github.com/umeraamir69/JAVA-DMS.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -43,6 +80,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/umeraamir/IdeaProjects/Delaer Managmnet System&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -50,7 +88,16 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver.localdb&quot;,
+      &quot;sqlserver&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -115,7 +162,9 @@
       <workItem from="1685556053290" duration="15318000" />
       <workItem from="1685602454475" duration="1891000" />
       <workItem from="1685605168090" duration="9391000" />
-      <workItem from="1685617552390" duration="7122000" />
+      <workItem from="1685617552390" duration="10305000" />
+      <workItem from="1685688491706" duration="15013000" />
+      <workItem from="1685739092610" duration="993000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1685606974205</created>

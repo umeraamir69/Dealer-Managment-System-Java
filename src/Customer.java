@@ -45,6 +45,9 @@ public class Customer extends User {
         return active;
     }
 
+    public Customer(String customerID, String name, String address, String phoneNumber, String email){
+        addCustomer( customerID,  name,  address,  phoneNumber,  email);
+    }
     public void addCustomer(String customerID, String name, String address, String phoneNumber, String email) {
         setCustomerID(customerID);
         setName(name);
@@ -73,5 +76,15 @@ public class Customer extends User {
                 "Phone Number: " + phoneNumber + "\n" +
                 "Email: " + email + "\n" +
                 "Active: " + active;
+    }
+
+    public String getDetails() {
+        StringBuilder details = new StringBuilder();
+        details.append("Customer ID: ").append(this.customerID).append("\n");
+        details.append("Name: ").append(this.getName()).append("\n");
+        details.append("Email: ").append(this.email).append("\n");
+        details.append("Phone Number: ").append(this.phoneNumber).append("\n");
+        details.append("Active: ").append(this.isActive()).append("\n");
+        return details.toString();
     }
 }

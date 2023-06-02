@@ -141,6 +141,20 @@ public class Car {
         System.out.println("Price: " + price);
     }
 
+    public String getDetails() {
+        StringBuilder details = new StringBuilder();
+        details.append("Car ID: ").append(carID).append("\n");
+        details.append("Make: ").append(make).append("\n");
+        details.append("Model: ").append(model).append("\n");
+        details.append("variant: ").append(variant).append("\n");
+        details.append("Price: PKR").append(price).append("\n");
+        details.append("Registration Number: ").append(registrationNumber).append("\n");
+        details.append("Colour: ").append(colour).append("\n");
+        details.append("Rating: ").append(rating).append("\n");
+
+        return details.toString();
+    }
+
     public void saleCar() {
         setStatus(false);
     }

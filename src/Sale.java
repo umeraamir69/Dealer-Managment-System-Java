@@ -2,12 +2,30 @@ import java.time.LocalDate;
 
 public class Sale {
     private String salesID;
-    private String customerID;
-    private String carID;
-    private String employeeID;
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    private Customer customer;
+
+    public Car getCar() {
+        return car;
+    }
+
+    private Car car;
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    private Employee employee;
     private LocalDate saleDate;
     private double price;
 
+    public  Sale(String salesID , Car car, Customer customer, Employee employee, LocalDate saleDate, double price) {
+        sellCar(salesID,car , customer , employee , saleDate , price);
+    }
     public void setSalesID(String salesID) {
         this.salesID = salesID;
     }
@@ -16,28 +34,28 @@ public class Sale {
         return salesID;
     }
 
-    public void setCustomerID(String customerID) {
-        this.customerID = customerID;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public String getCustomerID() {
-        return customerID;
+        return customer.getCustomerID();
     }
 
-    public void setCarID(String carID) {
-        this.carID = carID;
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     public String getCarID() {
-        return carID;
+        return car.getCarID();
     }
 
-    public void setEmployeeID(String employeeID) {
-        this.employeeID = employeeID;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     public String getEmployeeID() {
-        return employeeID;
+        return employee.getEmployeeID();
     }
 
     public void setSaleDate(LocalDate saleDate) {
@@ -56,20 +74,22 @@ public class Sale {
         return price;
     }
 
-    public void sellCar(Car car, String customerID, String employeeID, LocalDate saleDate, double price) {
+    public void sellCar(String salesID,Car car, Customer customer, Employee employee, LocalDate saleDate, double price) {
+        setSalesID(salesID);
         car.setStatus(false);
-        setCustomerID(customerID);
-        setCarID(car.getCarID());
-        setEmployeeID(employeeID);
+        car.setPrice(price);
+        setCustomer(customer);
+        setCar(car);
+        setEmployee(employee);
         setSaleDate(saleDate);
         setPrice(price);
     }
 
     public void printSale() {
         System.out.println("Sales ID: " + salesID);
-        System.out.println("Customer ID: " + customerID);
-        System.out.println("Car ID: " + carID);
-        System.out.println("Employee ID: " + employeeID);
+        System.out.println("Customer: " + customer.getCustomerDetails());
+    car.printCar();
+ employee.getEmployeeDetails();
         System.out.println("Sale Date: " + saleDate);
         System.out.println("Price: " + price);
     }

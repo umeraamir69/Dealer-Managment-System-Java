@@ -1,5 +1,8 @@
 import javax.swing.*;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.sql.*;
+import java.util.Date;
 
 public class CarDealerManagementSystem {
     public ArrayList<Car> cars;
@@ -72,10 +75,25 @@ public class CarDealerManagementSystem {
     // ...
 
 
+
+
     public static void main(String[] args) {
         CarDealerManagementSystem system = new CarDealerManagementSystem();
+
+
         Employee employee1 = new Employee("EmpID1", "John Smith", "Position1", 5000.0 ,"57 RB Street 12", "admin" , "123");
+        Customer customer1 = new Customer("CUS01", "John Smith", "RAZA LDA", "3359119222" ,"123@123.com");
+        Car car1 = new Car("Toyota" , "2020" , "Fortuner G 2.7" ,"2" ,"LE-20-120" ,"White" ,9.7 ,"" ,true ,1200000);
+        Sale s1 = new Sale("001" , car1 , customer1 , employee1 , new Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate()  ,1200000);
+        Inspection ins1 = new Inspection("001","LRR 9104" , new Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),"Excellent Condition" , 100 , 100 ,true , "First" , "Original");
+
+
+        customer1.setActive(true);
         system.addEmployee(employee1);
+        system.addCustomer(customer1);
+        system.addCar(car1);
+        system.addSale(s1);
+        system.addInspection(ins1);
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

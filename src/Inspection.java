@@ -14,7 +14,10 @@ public class Inspection {
     public void setInspectionID(String inspectionID) {
         this.inspectionID = inspectionID;
     }
-
+public Inspection(String inspectionID, String registrationNumber, LocalDate inspectionDate, String remarks,
+                  float outerCondition, float innerCondition, boolean accident, String ownerStatus, String documentsStatus){
+        addInspection(inspectionID , registrationNumber , inspectionDate ,remarks ,outerCondition , innerCondition ,accident,ownerStatus,documentsStatus);
+}
     public String getInspectionID() {
         return inspectionID;
     }
@@ -105,4 +108,6 @@ public class Inspection {
         setOwnerStatus(ownerStatus);
         setDocumentsStatus(documentsStatus);
     }
+
+
 }

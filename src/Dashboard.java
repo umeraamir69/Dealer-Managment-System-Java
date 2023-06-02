@@ -125,8 +125,8 @@ public class Dashboard extends JFrame {
 
         // Inspection dropdown
         JButton inspectionDropdown = createDropdownButton("Inspection", "/inspection_icon.png",
-                new String[]{"Add Inspection", "Add Inspection Request", "View Inspection", "View Inspection Request",
-                        "Edit Inspection", "Delete Inspection", "Find Inspection", "Find Inspection Request"});
+                new String[]{"Add Inspection",  "View Inspection",
+                        "Edit & Delete Inspection", "Find Inspection", });
         sideNavBar.add(inspectionDropdown);
 
         // Payroll dropdown
@@ -136,7 +136,7 @@ public class Dashboard extends JFrame {
 
         // Receipt dropdown
         JButton receiptDropdown = createDropdownButton("Receipt", "/receipt_icon.png",
-                new String[]{"Generate Receipt", "Search Receipt", "Print Receipt"});
+                new String[]{"Generate Receipt", "Search Receipt"});
         sideNavBar.add(receiptDropdown);
 
         // Logout button
@@ -239,16 +239,135 @@ public class Dashboard extends JFrame {
                 item.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         ResetPane();
-//                        JPanel pnl = new JPanel();
-//                        pnl.add(new BlockEmployeePanel(data), BorderLayout.WEST);
-//                        pnl.add(new EmployeeTableGUI(data), BorderLayout.SOUTH);
-
                         contentPane.add(new BlockEmployeePanel(data), BorderLayout.CENTER);
                         contentPane.revalidate();
                         contentPane.repaint();
                     }
                 });
+            }else if (menuItem.equals("Add Customer")) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new CreateCustomerForm(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }else if (menuItem.equals("Find Customer") ||menuItem.equals("Edit Customer") || menuItem.equals("Delete Customer") ) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new CustomerTableGUI(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }else if (menuItem.equals("Block Customer")) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new BlockEmployeePanel(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }else if (menuItem.equals("View Balance")) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new FinancePanel(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
             }
+            else if (menuItem.equals("Add Record")) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new AddBalancePanel(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }            else if (menuItem.equals("Give Pay")) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new EmployeeSalaryPanel(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }
+            else if (menuItem.equals("Search Pay") ||menuItem.equals("Check History")  ) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new FindSalary(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            } else if (menuItem.equals("Add Sale")  ) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new SalePanel(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }else if (menuItem.equals("Search Sale") || menuItem.equals("Edit Sale")  ) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new SalesPanel(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }else if (menuItem.equals("View Sale") ) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new SalesDetailsPanel(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }else if (menuItem.equals("Add Inspection") ) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new InspectionForm(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }else if (menuItem.equals("View Inspection") ) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new ViewInspectionPanel(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }else if (menuItem.equals("Edit & Delete Inspection") ) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new InspectionTablePanel(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }
+
+
+
+
 
             popupMenu.add(item);
         }

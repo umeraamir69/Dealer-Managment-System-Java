@@ -116,4 +116,15 @@ public class Employee extends User {
             System.out.println("Invalid old password. Password change failed.");
         }
     }
+
+    public String getDetails() {
+        StringBuilder details = new StringBuilder();
+        details.append("Employee ID: ").append(employeeID).append("\n");
+        details.append("Name: ").append(this.getName()).append("\n");
+        details.append("Position: ").append(position).append("\n");
+        details.append("Salary: PKR").append(salary).append("\n");
+        details.append("Address: ").append(address).append("\n");
+        details.append("UserName: ").append(username).append("\n");
+        return details.toString();
+    }
 }

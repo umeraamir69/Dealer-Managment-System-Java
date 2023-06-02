@@ -24,20 +24,22 @@ public class LoginForm extends JFrame {
         setTitle("Car Dealer Management System - Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        getContentPane().setBackground(Color.decode("#DDE6ED"));
+        getContentPane().setBackground(Color.decode("#27374D"));
         setLayout(null);
 
         // Create and configure components
         titleLabel = new JLabel("Car Dealer Management System");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
-        titleLabel.setForeground(Color.decode("#27374D"));
-        titleLabel.setBounds(50, 20, 300, 30);
+        titleLabel.setForeground(Color.decode("#DDE6ED"));
+        titleLabel.setBounds(50, 20, 400, 30);
 
         usernameLabel = new JLabel("Username:");
         usernameLabel.setBounds(50, 70, 80, 20);
+        usernameLabel.setForeground(Color.decode("#DDE6ED"));
 
         passwordLabel = new JLabel("Password:");
         passwordLabel.setBounds(50, 100, 80, 20);
+        passwordLabel.setForeground(Color.decode("#DDE6ED"));
 
         usernameField = new JTextField();
         usernameField.setBounds(140, 70, 150, 20);

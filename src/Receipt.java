@@ -1,4 +1,4 @@
-public class Receipt extends Sale {
+public class Receipt  {
     private String receiptID;
 
     public void setReceiptID(String receiptID) {
@@ -11,6 +11,6 @@ public class Receipt extends Sale {
 
     public void generateReceipt() {
         System.out.println("Receipt ID: " + receiptID);
-        printSale();
+
     }
 }

@@ -354,7 +354,7 @@ public class Dashboard extends JFrame {
                         contentPane.repaint();
                     }
                 });
-            }else if (menuItem.equals("Edit & Delete Inspection") ) {
+            }else if (menuItem.equals("Edit & Delete Inspection") || menuItem.equals("Find Inspection")  ) {
                 item.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         ResetPane();

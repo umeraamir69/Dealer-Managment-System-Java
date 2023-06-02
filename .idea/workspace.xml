@@ -5,38 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2816564a-1086-4967-a279-8be68c79cb6c" name="Changes" comment="Employee Completed">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cca9e697-e4f8-4286-885b-90a405630f5d.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cca9e697-e4f8-4286-885b-90a405630f5d/storage_v2/_src_/database/DMS.6ggBAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cca9e697-e4f8-4286-885b-90a405630f5d/storage_v2/_src_/database/DMS.6ggBAA/schema/INFORMATION_SCHEMA.NBgcMw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cca9e697-e4f8-4286-885b-90a405630f5d/storage_v2/_src_/database/DMS.6ggBAA/schema/sys.zb4BAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/enu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AddBalancePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BlockCustomerPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CreateCustomerForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CustomerBlockTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CustomerTableGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EmployeeSalaryPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FinancePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FindSalary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InspectionForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InspectionTablePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SalePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SalesDetailsPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SalesPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ViewInspectionPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Delaer Managmnet System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Delaer Managmnet System.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarDealerManagementSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarDealerManagementSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Inspection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inspection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Receipt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InspectionTablePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InspectionTablePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +135,8 @@
       <workItem from="1685605168090" duration="9391000" />
       <workItem from="1685617552390" duration="10305000" />
       <workItem from="1685688491706" duration="15013000" />
-      <workItem from="1685739092610" duration="993000" />
+      <workItem from="1685739092610" duration="1046000" />
+      <workItem from="1685740263183" duration="457000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1685606974205</created>

@@ -141,6 +141,11 @@ public class Car {
         System.out.println("Price: " + price);
     }
 
+    public Car() {
+        // Default constructor
+    }
+
+
     public String getDetails() {
         StringBuilder details = new StringBuilder();
         details.append("Car ID: ").append(carID).append("\n");

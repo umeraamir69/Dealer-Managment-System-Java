@@ -31,6 +31,7 @@ public class Dashboard extends JFrame {
         contentPane.add(topNavBar, BorderLayout.NORTH);
         contentPane.add(sideNavBar, BorderLayout.WEST);
         contentPane.add(user, BorderLayout.SOUTH);
+        contentPane.add(new DashboardHomePanel(data) , BorderLayout.CENTER);
 
         setContentPane(contentPane);
     }
@@ -110,7 +111,7 @@ public class Dashboard extends JFrame {
 
         // Customer dropdown
         JButton customerDropdown = createDropdownButton("Customer", "/customer_icon.png",
-                new String[]{"Add Customer", "Find Customer", "Edit Customer", "Delete Customer", "Block Customer", "Get Customer History"});
+                new String[]{"Add Customer", "Find Customer", "Edit Customer", "Delete Customer", "Block Customer", "History"});
         sideNavBar.add(customerDropdown);
 
         // Finance dropdown
@@ -136,7 +137,7 @@ public class Dashboard extends JFrame {
 
         // Receipt dropdown
         JButton receiptDropdown = createDropdownButton("Receipt", "/receipt_icon.png",
-                new String[]{"Generate Receipt", "Search Receipt"});
+                new String[]{"Generate Receipt", "Generate Report"});
         sideNavBar.add(receiptDropdown);
 
         // Logout button
@@ -363,7 +364,35 @@ public class Dashboard extends JFrame {
                         contentPane.repaint();
                     }
                 });
+            }else if (menuItem.equals("Generate Receipt") ) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new ReportGeneratorGUI(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }else if (menuItem.equals("Generate Report") ) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new ReportGeneratorGUIs(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }else if (menuItem.equals("History") ) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new SalesReportPanel(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
             }
+
 
 
 

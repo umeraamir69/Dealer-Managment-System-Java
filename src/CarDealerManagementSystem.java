@@ -14,6 +14,8 @@ public class CarDealerManagementSystem {
     public Finance finance;
     public Employee currentobj;
 
+    
+
     public CarDealerManagementSystem() {
         cars = new ArrayList<>();
         customers = new ArrayList<>();
@@ -81,7 +83,17 @@ public class CarDealerManagementSystem {
         CarDealerManagementSystem system = new CarDealerManagementSystem();
 
 
-        Employee employee1 = new Employee("EmpID1", "John Smith", "Position1", 5000.0 ,"57 RB Street 12", "admin" , "123");
+        Employee employee1 = new Employee("1", "Umer Aamir", "Admin", 9999999 ,"57 RB Street 12", "admin" , "123");
+        Employee employee2 = new Employee("2", "Ali", "Manager", 10000 ,"ABC CUI Lahore", "ali" , "ali");
+        Employee employee3 = new Employee("3", "Anas Malick", "Manager", 10000 ,"ABC CUI Lahore", "FA21-BSE-126" , "126");
+        Employee employee4 = new Employee("4", "Ashsh Malick", "Manager", 10000 ,"ABC CUI Lahore", "FA21-BSE-120" , "120");
+
+        system.addEmployee(employee1);
+        system.addEmployee(employee2);
+        system.addEmployee(employee3);
+        system.addEmployee(employee4);
+
+
         Customer customer1 = new Customer("CUS01", "John Smith", "RAZA LDA", "3359119222" ,"123@123.com");
         Car car1 = new Car("Toyota" , "2020" , "Fortuner G 2.7" ,"2" ,"LE-20-120" ,"White" ,9.7 ,"" ,true ,1200000);
         Sale s1 = new Sale("001" , car1 , customer1 , employee1 , new Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate()  ,1200000);
@@ -89,7 +101,7 @@ public class CarDealerManagementSystem {
 
 
         customer1.setActive(true);
-        system.addEmployee(employee1);
+
         system.addCustomer(customer1);
         system.addCar(car1);
         system.addSale(s1);

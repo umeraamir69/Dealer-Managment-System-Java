@@ -253,19 +253,5 @@ public class CarRecordGUI extends JPanel {
         editFormDialog.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                CarDealerManagementSystem data = new CarDealerManagementSystem();
-                CarRecordGUI carRecordGUI = new CarRecordGUI(data);
 
-                JFrame frame = new JFrame("Car Records");
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.add(carRecordGUI);
-                frame.pack();
-                frame.setLocationRelativeTo(null);
-                frame.setVisible(true);
-            }
-        });
-    }
 }

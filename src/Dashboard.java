@@ -137,13 +137,15 @@ public class Dashboard extends JFrame {
 
         // Receipt dropdown
         JButton receiptDropdown = createDropdownButton("Receipt", "/receipt_icon.png",
-                new String[]{"Generate Receipt", "Generate Report"});
+                new String[]{"Generate Receipt", "Generate Report" , "Analytics"});
         sideNavBar.add(receiptDropdown);
 
         // Logout button
         JButton logoutButton = new JButton("Logout");
         logoutButton.setForeground(Color.RED);
         logoutButton.setBorderPainted(false);
+
+
         logoutButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Perform logout action
@@ -387,6 +389,15 @@ public class Dashboard extends JFrame {
                     public void actionPerformed(ActionEvent e) {
                         ResetPane();
                         contentPane.add(new SalesReportPanel(data), BorderLayout.CENTER);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                    }
+                });
+            }else if (menuItem.equals("Analytics") ) {
+                item.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        ResetPane();
+                        contentPane.add(new SalesAnalyticsPanel(data), BorderLayout.CENTER);
                         contentPane.revalidate();
                         contentPane.repaint();
                     }

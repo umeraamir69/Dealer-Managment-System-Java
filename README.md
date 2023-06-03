@@ -57,6 +57,10 @@ To run the Car Dealer Management System, follow these steps:
 
 5. Manage your daily tasks efficiently and streamline your car dealership operations.
 
+## Credentials 
+usermname # admin
+password # 123
+
 ## Dependencies
 
 The Car Dealer Management System relies on the following libraries:

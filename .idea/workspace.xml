@@ -10,12 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2816564a-1086-4967-a279-8be68c79cb6c" name="Changes" comment="Employee Completed">
-      <change afterPath="$PROJECT_DIR$/src/SalesAnalyticsPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Delaer Managmnet System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Delaer Managmnet System.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarDealerManagementSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarDealerManagementSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarRecordGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarRecordGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +145,9 @@
       <workItem from="1685740728572" duration="28000" />
       <workItem from="1685741301461" duration="3974000" />
       <workItem from="1685775306013" duration="1765000" />
-      <workItem from="1685813775177" duration="449000" />
+      <workItem from="1685813775177" duration="645000" />
+      <workItem from="1685814427667" duration="8000" />
+      <workItem from="1685953006667" duration="123000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1685606974205</created>
